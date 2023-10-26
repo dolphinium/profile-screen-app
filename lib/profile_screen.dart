@@ -18,9 +18,11 @@ class ProfileScreen extends StatelessWidget {
     return Container(
       width: 200,
       height: 200,
-      child: Image.asset(
-        'assets/images/profile_photo.jpg',
-        fit: BoxFit.fitWidth,
+      child: ClipOval(
+        child: Image.asset(
+          'assets/images/profile_photo.jpg',
+          fit: BoxFit.fitWidth,
+        ),
       ),
     );
   }
