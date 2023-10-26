@@ -5,12 +5,12 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        children:<Widget> [
+        children: <Widget>[
           Image.asset('assets/images/background.jpg'),
           Transform.translate(
             offset: Offset(0, 100),
             child: Column(
-              children:<Widget> [
+              children: <Widget>[
                 _buildProfileImage(context),
                 _buildProfileDetails(context),
                 _buildActions(context),
@@ -68,23 +68,19 @@ class ProfileScreen extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        _buildIcon(Icons.heart_broken,"A broken heart"),
-        _buildIcon(Icons.favorite,'Nasty Girls🔥🔥'),
-        _buildIcon(Icons.directions_walk,'👨🏽‍🦼👨🏽‍🦼')
+        _buildIcon(Icons.heart_broken, "A broken heart"),
+        _buildIcon(Icons.favorite, 'Nasty Girls🔥🔥'),
+        _buildIcon(Icons.directions_walk, '👨🏽‍🦼👨🏽‍🦼')
       ],
     );
   }
 
-  Widget _buildIcon(IconData icon, String text){
+  Widget _buildIcon(IconData icon, String text) {
     return Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children:<Widget> [
-            Icon(icon, size:40),
-            Text(text)
-          ],
-        ),
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        children: <Widget>[Icon(icon, size: 40), Text(text)],
+      ),
     );
   }
-
 }
