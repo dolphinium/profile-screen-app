@@ -1,6 +1,27 @@
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
+  @override
+  _ProfileScreenState createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  // Declare and initialize your variables here
+
+  String profileImage = 'assets/images/profile_photo.jpg';
+  String name = 'Yunus Emre KORKMAZ';
+  String age = '23';
+
+  IconData brokenHeartIcon = Icons.heart_broken;
+  String brokenHeartText = 'A broken heart';
+  IconData directionsIcon = Icons.directions_walk;
+
+  String statusText = "Single";
+  IconData heartIcon = Icons.favorite;
+  String heartText = 'Nasty Girls🔥🔥';
+
+  String nastyGirlsText = '👨🏽‍🦼👨🏽‍🦼';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +49,7 @@ class ProfileScreen extends StatelessWidget {
       height: 200,
       child: ClipOval(
         child: Image.asset(
-          'assets/images/profile_photo.jpg',
+          profileImage, // Use the profileImage variable here
           fit: BoxFit.fitWidth,
         ),
       ),
@@ -42,11 +63,11 @@ class ProfileScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            'Yunus Emre KORKMAZ',
+            name,
             style: TextStyle(fontSize: 35, fontWeight: FontWeight.w600),
           ),
           _buildDetailsRow('Age', '23'),
-          _buildDetailsRow('Status', 'Single ;)')
+          _buildDetailsRow('Status', statusText)
         ],
       ),
     );
@@ -65,14 +86,43 @@ class ProfileScreen extends StatelessWidget {
   }
 
   Widget _buildActions(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Column(
       children: <Widget>[
-        _buildIcon(Icons.heart_broken, "A broken heart"),
-        _buildIcon(Icons.favorite, 'Nasty Girls🔥🔥'),
-        _buildIcon(Icons.directions_walk, '👨🏽‍🦼👨🏽‍🦼')
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            _buildIcon(brokenHeartIcon, brokenHeartText),
+            _buildIcon(heartIcon, heartText),
+            _buildIcon(directionsIcon, nastyGirlsText),
+          ],
+        ),
+        ElevatedButton(
+          onPressed:
+              _resetValues, // Call the _resetValues method when the button is pressed
+          child: Text('Prank Button'),
+        ),
       ],
     );
+  }
+
+  void _resetValues() {
+    setState(() {
+      // Update profile image
+      profileImage = 'assets/images/profile_photo_real.jpg';
+
+      // Update the values
+      name = 'Yunus Emre KORKMAZ';
+      // Update the icons and texts
+      brokenHeartIcon = Icons.code;
+      brokenHeartText = 'Coding';
+
+      heartIcon = Icons.book;
+      heartText = 'Reading';
+
+      statusText = 'Studying 🤓';
+      nastyGirlsText = 'Science';
+      directionsIcon = Icons.science;
+    });
   }
 
   Widget _buildIcon(IconData icon, String text) {
