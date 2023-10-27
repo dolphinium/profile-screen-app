@@ -11,6 +11,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   String profileImage = 'assets/images/profile_photo.jpg';
   String name = 'Yunus Emre KORKMAZ';
   String age = '23';
+  String classInfo = "4";
+  String department = "Computer Engineering";
 
   IconData brokenHeartIcon = Icons.heart_broken;
   String brokenHeartText = 'A broken heart';
@@ -66,8 +68,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             name,
             style: TextStyle(fontSize: 35, fontWeight: FontWeight.w600),
           ),
-          _buildDetailsRow('Age', '23'),
-          _buildDetailsRow('Status', statusText)
+          _buildDetailsRow('Class', classInfo),
+          _buildDetailsRow('Department', department)
         ],
       ),
     );
