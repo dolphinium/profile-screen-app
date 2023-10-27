@@ -28,7 +28,7 @@ class ProfileScreen extends StatelessWidget {
       height: 200,
       child: ClipOval(
         child: Image.asset(
-          'assets/images/profile_photo.jpg',
+          'assets/images/profile_picture.jpg',
           fit: BoxFit.fitWidth,
         ),
       ),
@@ -45,8 +45,8 @@ class ProfileScreen extends StatelessWidget {
             'Yunus Emre KORKMAZ',
             style: TextStyle(fontSize: 35, fontWeight: FontWeight.w600),
           ),
-          _buildDetailsRow('Age', '23'),
-          _buildDetailsRow('Status', 'Single ;)')
+          _buildDetailsRow('Class', '4'),
+          _buildDetailsRow('Department', 'Computer Engineering')
         ],
       ),
     );
@@ -68,9 +68,9 @@ class ProfileScreen extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        _buildIcon(Icons.heart_broken, "A broken heart"),
-        _buildIcon(Icons.favorite, 'Nasty Girls🔥🔥'),
-        _buildIcon(Icons.directions_walk, '👨🏽‍🦼👨🏽‍🦼')
+        _buildIcon(Icons.code, "Coding"),
+        _buildIcon(Icons.games, 'Counter-Strike 2'),
+        _buildIcon(Icons.music_note, 'Music')
       ],
     );
   }

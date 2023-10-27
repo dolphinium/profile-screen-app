@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context){
     return MaterialApp(
       home: ProfileScreen(),
+      debugShowCheckedModeBanner: false // to remove debug tag on top right corner
     );
   }
 
